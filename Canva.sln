@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canva", "Canva\Canva.csproj", "{C38D864B-B066-49BB-82A2-2752C1D054F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{A778BCF7-4DD1-4AE6-83EF-158C993DE1BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C38D864B-B066-49BB-82A2-2752C1D054F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C38D864B-B066-49BB-82A2-2752C1D054F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C38D864B-B066-49BB-82A2-2752C1D054F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C38D864B-B066-49BB-82A2-2752C1D054F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A778BCF7-4DD1-4AE6-83EF-158C993DE1BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A778BCF7-4DD1-4AE6-83EF-158C993DE1BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A778BCF7-4DD1-4AE6-83EF-158C993DE1BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A778BCF7-4DD1-4AE6-83EF-158C993DE1BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://hit0782.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Canva\\Canva.csproj
+		SccProjectName1 = Canva
+		SccLocalPath1 = Canva
+		SccProjectUniqueName2 = DataModel\\DataModel.csproj
+		SccProjectName2 = DataModel
+		SccLocalPath2 = DataModel
+	EndGlobalSection
+EndGlobal

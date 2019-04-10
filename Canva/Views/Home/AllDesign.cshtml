@@ -1,0 +1,20 @@
+﻿@model DataModel.Person
+@{
+    ViewBag.Title = "AllDesign";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">My Designs</h2>
+<ul class="my-all-design">
+
+    @foreach (var item in Model.UserDesigns)
+    {
+        <li>
+            <a href="/Home/MyDesign?Id=@item.Id">
+                @*<img src="@item.Design.ImageUrl" />*@
+                <iframe src="/Home/MyDesign?Id=@item.Id"></iframe>
+                <h3>@item.Heading</h3>
+                <p>@item.Description</p>
+            </a>
+        </li>
+    }
+</ul>

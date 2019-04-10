@@ -1,0 +1,48 @@
+﻿@model List<Canva.Models.CategoryModel>
+@{
+    ViewBag.Title = "Categories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Categories</h2>
+    </div>
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">List of Categories</div>
+            <div class="panel-body">
+                <a href="@Url.Action("EditCategory","Admin")" class="btn btn-link">Add New Category</a>
+                <table class="table table-striped table-responsive">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Category Name</th>
+                            <th>Action</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td><a href="@Url.Action("EditCategory","Admin",new { Id=item.Id})" class="btn btn-primary">Edit</a>  <button class="btn btn-danger" onclick="DeleteCategory('@item.Id')" type="button">Delete</button></td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        function DeleteCategory(id) {
+            var result = confirm("All Design related to this categories will be deleted. Do you want to proceed?");
+            if (result) {
+                window.location.href = "/Admin/DeleteCategory?Id=" + id;
+            }
+        }
+    </script>
+    }

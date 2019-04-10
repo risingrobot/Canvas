@@ -1,0 +1,492 @@
+﻿
+@{ 
+    bool isAdmin = Convert.ToBoolean(Session["Admin"]);
+    string action = ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString();
+    string controller = ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString();
+    int UserId = Convert.ToInt32(Session["userId"]);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/design_style.css" rel="stylesheet" />
+    <title>LogIn</title>
+    <style>
+        body {
+            font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+            font-size: 90%;
+            padding:0;
+            margin:0;
+            background-color:#fbdeb4;
+        }
+
+        .sidebar {
+            color: #fff;
+            background-color: #3f4652;
+            box-sizing: border-box;
+            padding: 15px;
+            width: 216px;
+            position: fixed;
+            height: 600px;
+        }
+
+        .avatar {
+            /*background-image: url('../../css/css/smileyface.jpeg');*/
+            background-image: url('../../Images/smileyface.jpeg');
+            width: 40px;
+            height: 40px;
+            line-height: 20px;
+            border-radius: 50%;
+            color: #fff;
+            background-size: cover;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            box-sizing: border-box;
+            margin: 0px 0px 0px 0px;
+            cursor: pointer;
+        }
+
+        span.displayNames {
+            margin: 9px -6px 0px 0px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .brandDisplyName {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            position: relative;
+            padding-right: 0em;
+            box-sizing: border-box;
+            opacity: .33;
+            cursor: pointer;
+        }
+
+        .drp-username {
+        }
+
+        span.notificationlabel {
+            cursor: pointer;
+            /* display: block; */
+            height: 44px;
+            opacity: .33;
+            overflow: hidden;
+            transition: opacity .25s ease;
+            width: 51px;
+        }
+
+        span#shownotificationMenu {
+            align-self: flex-start;
+            margin: -37px 21px 0px 0px;
+            position: relative;
+            float: right;
+            font-size: 17px;
+            position: relative;
+        }
+
+        span.notificationBadge {
+            background-color: #fc4d1e;
+            border-radius: 1.8em;
+            border: 2px solid #3f4652;
+            color: #fff;
+            display: none;
+            font-size: 10px;
+            line-height: 17px;
+            padding: 0 .5em;
+            position: absolute;
+            right: -18px;
+            text-align: center;
+            top: -4px;
+            transform-origin: 11px center;
+            width: 1.3em;
+        }
+
+        a.btn-create {
+            margin: -19px;
+            border-color: transparent;
+            background-color: #ff4200;
+
+            border: 2px solid transparent;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            margin: 0px;
+            min-width: 11.78572em;
+            line-height: 2.78572;
+            outline-width: 0;
+            padding: 0px 1em;
+            position: relative;
+            text-align: center;
+            margin: -18px 0px -12px -27px;
+        }
+
+        .sidebar-section {
+            margin: 30px;
+        }
+
+        .sidebarview li {
+            /* display: -webkit-inline-box; */
+            list-style: none;
+            margin-left: -40px;
+            font-size: 18px;
+        }
+
+        li.SideBarMenu {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            overflow: hidden;
+            position: relative;
+            text-overflow: ellipsis;
+            transition: color .3s;
+            vertical-align: top;
+            white-space: nowrap;
+            width: 135px;
+        }
+
+        li.notab {
+            text-decoration: none;
+            list-style: none;
+            margin-left: -35px;
+            margin-bottom: 0px;
+            margin-top: 20px;
+            /*border-bottom: 1px solid #8989895e;*/
+            padding: 0px 0px 20px 0px;
+        }
+
+        button.btncreatefolder {
+            color: white;
+            font-size: 14px;
+            background-color: transparent;
+            opacity: .7;
+            padding: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: opacity .3s;
+            margin: 3px 0;
+            text-align: left;
+            border: none;
+        }
+
+        .sidebarUpgradeBtn {
+            text-decoration:none;
+            border: 0px solid #8989895e;
+            background: #4e5660;
+            margin-bottom: 1.4em;
+            margin-top: 5px;
+            color: #fff;
+            padding: 12px 70px 12px 70px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        a.sidebarMenuLink {
+            list-style: none;
+            text-decoration: none;
+            color: rgba(255,255,255,.33);
+            font-size: 12px;
+            line-height: 2;
+            transition: color .15s;
+            /* background-color: black; */
+        }
+
+        menu.sidebarMenu {
+            list-style-type: none;
+            line-height: 1.5em;
+            padding: 5px;
+            margin: 10px;
+        }
+
+        li.sidebarTrash {
+            /* text-decoration: none; */
+            list-style-type: none;
+            /* padding: 1px 0px 0px 0px; */
+            margin-left: -33px;
+            /* margin: 10px; */
+            opacity: .7;
+            font-size: 15px;
+        }
+
+        a.sidebarfooterLink {
+            list-style-type: none;
+            text-decoration: none;
+        }
+
+        img.sidebarfooterImage {
+            width: 30%;
+            /* padding: 0px 0px 0px 0px; */
+            margin: 0px 0px -40px 0px;
+            margin-left: 10px;
+        }
+
+        a.sidebarfooterLink {
+            /*background-image: url('../../css/canva_logo.png');*/
+            list-style-type: none;
+            text-decoration: none;
+            color: rgba(255,255,255,.33) !important;
+            height: 61px;
+            overflow: visible;
+            margin: -19px 8px 0px 0px;
+            margin-left: 90px;
+            align-items: center;
+            font-size: 11px;
+            display: flex;
+        }
+
+        footer.sidebarfooter {
+            height: 150px;
+        }
+
+        .scrollElement {
+            outline: none;
+        }
+
+        .sidebarViewport {
+            flex-basis: auto;
+            flex-grow: 0;
+            flex-shrink: 1;
+            overflow: hidden;
+            /*padding: 0 20px;*/
+        }
+
+            /*.sidebarViewport.scrollElement {
+                overflow-y: scroll;
+            }*/
+
+        .tabpointer {
+            top: 130px;
+            border-width: 20px 0 20px 15px;
+            border-color: transparent transparent transparent #363d47;
+            border-style: solid;
+            box-sizing: border-box;
+            opacity: 1;
+            position: absolute;
+            margin-left: 201px;
+        }
+
+        .scrollTrack {
+            bottom: 209px;
+            right: 9px;
+            top: 165px;
+            width: 0;
+            z-index: 2499;
+            cursor: default;
+            margin: 3px;
+            position: absolute;
+            user-select: none;
+        }
+
+        .scrollThumb {
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #ebeced;
+            box-sizing: border-box;
+            transition: opacity .15s linear;
+            width: 9px;
+        }
+
+            .scrollThumb:hover, .scrollThumb.active {
+                opacity: .45;
+            }
+
+        .gradient {
+            background: linear-gradient(-90deg,#542b1c, #a54928, #ff4200);
+            height: 276px;
+            width: 100%;
+            top: 0%;
+            left: 0%;
+            /*position: absolute;*/
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: 200;
+            transition: all .5s linear;
+            margin-right: .5em;
+            color: #fff;
+            margin-left: 20px;
+        }
+
+        .headerMenu {
+            display: block;
+            display: flex;
+        }
+
+        input.research {
+            padding: 10px 0px 9px 35px;
+            margin: 15px 19px 0px 355px;
+            border-radius: 7px;
+            font-size: 16px;
+            /*background-image: url('../../css/css/desktop-search.png');*/
+            background-image: url('../../Images/desktop-search.png');
+            background-repeat: no-repeat;
+            background-position-y: 16px;
+            background-position-x: 8px;
+        }
+
+        .btncustomer {
+            font-size: 16px;
+            background: rgba(0,0,0,.15);
+            padding: 10px 1em;
+            border-radius: 5px;
+            color: #fff;
+            position: relative;
+            cursor: pointer;
+            border: salmon;
+        }
+
+        ul.features li {
+            display: inline;
+            /* margin: 0px 190px 0px 0px; */
+            /* padding: 10px 0px 0px 5px; */
+            font-size: 20px;
+            margin: 65px;
+            padding: -15px;
+            line-height: 10;
+            color: #fff;
+            cursor: pointer;
+        }
+
+            ul.features li a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            ul.features li.more {
+                position: relative;
+                border: 2px dashed white;
+                border-radius: 5px;
+                box-shadow: none;
+                padding: 40px;
+            }
+
+        .parapmore {
+            float: right;
+            font-size: 18px;
+            margin: -50px 107px 0px 0px;
+            color: #fff;
+            font-family: sans-serif;
+            position: relative;
+        }
+
+        .SideBarMenu.active a {
+            color: #ff4200;
+        }
+
+        .panel-default > .panel-heading {
+            color: #fff;
+            background-color: #ff4200;
+            border-color: #ff4200;
+        }
+    </style>
+    @RenderSection("style", false);
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <div class="sidebar">
+                    <div class="avatar"></div>
+                    <span class="displayNames">
+                        <span class="DisplyUser" title="@Session["username"]">@Session["username"]<span class="caret"></span></span>
+                        <span class="brandDisplyName" title="@Session["username"]">
+
+                        </span>
+                    </span>
+                    <span class="notifications" id="shownotificationMenu">
+                        <span class="notificationlabel" title="notification"><i class="fa fa-bell-o"></i></span>
+                        <span class="notificationBadge">0</span>
+                    </span>
+
+                    @if (!isAdmin)
+                    {
+                        <div class="sidebar-section">
+                            <a href="/Home/Index" class="btn-create">create a design</a>
+                        </div>
+                    }
+
+                    <div class="sidebarViewport scrollElement">
+                        <div class="sidebarview">
+                            <ul>
+                                @if (isAdmin)
+                                {
+                                    <li class="SideBarMenu @(controller=="Admin" && action== "Index"? "active":""    )"><a href="@Url.Action("Index","Admin")">Dashboard</a></li>
+                                    <li class="SideBarMenu @(controller =="Admin" && action== "Advertisement"? "active":"")"><a href="@Url.Action("Advertisement","Admin")">Advertisement</a></li>
+                                    <li class="SideBarMenu @(controller=="Admin" && action=="Design"?"active":"")"><a href="@Url.Action("Design","Admin")">Designs</a></li>
+                                    <li class="SideBarMenu @(controller=="Admin" && action=="Categories" || controller=="Admin" && action == "EditCategory" || controller=="Admin" && action =="DeleteCategory"? "active": "")"><a href="@Url.Action("Categories","Admin")">Categories</a></li>
+                                    <li class="SideBarMenu @(controller=="Admin" && action=="Subscribe"?"active":"")"><a href="@Url.Action("Subscribe","Admin")">Subscriptions</a></li>
+                                    <li class="SideBarMenu @(controller=="Admin" && action=="ProfileSetting"?"active":"")"><a href="@Url.Action("ProfileSetting","Admin",new {Id= UserId })">Profile Setting</a></li>
+                                }
+                                else
+                                {
+                                    <li class="SideBarMenu onitemsticky @(controller=="Home" && action=="AllDesign"?"active":"")"><a href="/Home/AllDesign">All your designs</a></li>
+                                    <li class="SideBarMenu @(controller=="Admin" && action=="ProfileSetting"?"active":"")"><a href="@Url.Action("ProfileSetting","Admin",new {Id= UserId })">Profile Setting</a></li>
+                                }
+                                @*
+                                <li class="SideBarMenu">Create a tream</li>
+                                <li class="SideBarMenu">Your brand</li>
+                                <li class="SideBarMenu">Find templates</li>*@
+                            </ul>
+                        </div>
+                        <div class="designFolderList">
+                            @*<ul>
+                                <li class="notab">
+                                    <button class="btncreatefolder">
+                                        <i class="fa fa-plus-circle"></i>
+                                        Get More Folder
+                                    </button>
+                                </li>
+                                <li class="sidebarTrash"><i class="fa fa-trash-o"></i>  Trash</li>
+                            </ul>*@
+                        </div>
+                    </div>
+                    <div class="scrollTrack">
+                        <div class"scrollThumb" style="height: 254px; transform: translateY(0px);"></div>
+                    </div>
+                    <div class="sidebarUpgrade">
+                        <a href="/Account/Register" class="sidebarUpgradeBtn">Logout</a>
+                    </div>
+
+                    <footer class="sidebarfooter">
+                        <menu class="sidebarMenu">
+                            <li><a class="sidebarMenuLink" href="https://www.canva.com/tutorials" target="_blank">Learn to design</a></li>
+                            <li><a class="sidebarMenuLink" href="https://www.canva.com/design-stream" target="_blank">Get design to inspiration</a></li>
+                        </menu>
+                        <img class="sidebarfooterImage" src="~/Images/canva_logo.png" />
+                        <a class="sidebarfooterLink" href="https://www.canva.com/"> Empowering the world to design</a>
+                    </footer>
+                    <div class="tabpointer"></div>
+
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-10 col-xs-10">
+                @RenderBody();
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/css/js/fontawesome.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @RenderSection("scripts",false)
+</body>
+</html>

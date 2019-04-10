@@ -1,0 +1,59 @@
+﻿@model Canva.Models.ProfileModel
+@{
+    ViewBag.Title = "ProfileSetting";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section style {
+    <style type="text/css">
+        .btn-primary {
+            color: #fff;
+            background-color: #ff4200;
+            border-color: #ff4200;
+        }
+
+            .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+                color: #fff;
+                background-color: #ea6a3e;
+                border-color: #ea6a3e;
+            }
+    </style>
+}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Profile</h2>
+    </div>
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Personal Profile</div>
+            <div class="panel-body">
+                @using (Html.BeginForm("ProfileSetting", "Admin", FormMethod.Post))
+                {
+                    <span>@Html.HiddenFor(x => x.Id)</span>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+                        <span style="color:red;">@Html.ValidationMessageFor(x => x.FullName)</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                        <span style="color:red;">@Html.ValidationMessageFor(x => x.Email)</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        @Html.PasswordFor(x => x.Password, new { @class = "form-control", value = Model.Password })
+                        <span style="color:red;">@Html.ValidationMessageFor(x => x.Password)</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control" })
+                        <span style="color:red;">@Html.ValidationMessageFor(x => x.ConfirmPassword)</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+

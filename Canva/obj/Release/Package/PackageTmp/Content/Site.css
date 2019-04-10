@@ -1,0 +1,82 @@
+﻿body {
+    background-image: url('../css/bg_tiles.2.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+@font-face{
+    font-family:fontawesome-webfont;
+    src:url(/fonts/fontawesome-webfont.ttf)
+}
+
+@font-face{
+    font-family:Windsong;
+    src:url(/fonts/Windsong.ttf)
+}
+.login-input{
+        padding: 5px;
+    margin: 0px 3px;
+    border: 1px;
+    border-radius: 3px;
+}
+.navigation li{
+    color: white;
+    display: inline-block;
+    padding: 10px;
+}
+
+.main-container h1{
+    font-family:Windsong;
+    font-weight:bold;
+    font-size: 80px;
+}
+
+.my-design {
+    list-style: none;
+}
+
+.my-design li {
+    width: 500px;
+    display:inline-block;
+}
+.my-design li img {
+     width:100%;
+     cursor:pointer;
+}
+.my-design li img:hover {
+    transform: scale(1.1);
+}
+.form-design{
+    margin:10px 0px;
+}
+.form-design label {
+    font-size:12px;
+}
+.form-design img{
+    width:30%;
+}
+.my-all-design{
+    list-style:none;
+}
+.my-all-design li{
+    display: inline-block;
+    width: 330px;
+    background-color: #fff;
+    padding: 8px;
+    margin: 5px 5px;
+}
+.my-all-design li a{
+    text-decoration:none;
+} 
+.my-all-design li a img{
+    width:100%;
+} 
+.my-all-design li a iframe{
+    width:100%;
+} 
+.my-all-design li a p{
+    overflow:auto;
+}
+.SideBarMenu a{
+    text-decoration:none;
+    color:#fff;
+}

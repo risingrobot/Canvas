@@ -1,0 +1,29 @@
+﻿@model List<DataModel.Design>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Design";
+}
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-container">
+                <h1>@(Model.FirstOrDefault().Category.Name) Designs <small>select of your choice</small></h1>
+                <ul class="my-design">
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <a href="/Home/CreateDesign?Id=@(item.Id)">
+                                <img src="@item.ImageUrl" />
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+

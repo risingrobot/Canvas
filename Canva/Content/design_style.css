@@ -1,0 +1,225 @@
+body{
+  background-color: #eeeeee;
+  padding: 10px;
+}
+
+@font-face {
+font-family: delightLetter;
+src: url(/fonts/ITCEDSCR.TTF);
+}
+@font-face {
+  font-family: INFROMAN;
+  src: url(/fonts/INFROMAN.TTF);
+}
+@font-face {
+  font-family: segoesc;
+  src: url(/fonts/segoesc.TTF);
+}
+@font-face {
+  font-family:SHOWG;
+  src: url(/fonts/SHOWG.TTF);
+}
+@font-face {
+  font-family: FRSCRIPT;
+  src: url(/fonts/FRSCRIPT.TTF);
+}
+@font-face {
+  font-family: segoescb;
+  src: url(/fonts/segoescb.TTF);
+}
+@font-face {
+  font-family: AmaticBold;
+  src: url(/fonts/AmaticBold.ttf);
+}
+@font-face {
+  font-family: AmaticSCRegular;
+  src: url(/fonts/AmaticSCRegular.ttf);
+}
+@font-face {
+  font-family: Windsong;
+  src: url(/fonts/Windsong.ttf);
+}
+.card1{
+  background-image: url(/cards/card1.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin:auto;
+  width: 100%;
+  min-height:600px;
+}
+.card1 .heading{
+  width:70%;
+  margin: auto;
+      padding-top: 50px;
+}
+.card1 .heading h1{
+  font-family: delightLetter;
+  /*padding: 10px 0px 10px 150px;*/
+  text-align: center;
+}
+.card1 .body{
+  width: 69%;
+    margin: auto;
+}
+.card1 .body p{
+  font-family: INFROMAN;
+  font-size: 20px;
+  text-align: center;
+}
+
+.card2{
+  background-image: url(/cards/card2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:auto;
+  width: 100%;
+  min-height:453px;
+  padding-top: 128px;
+}
+
+.card2 .main-panel {
+    background-color: black;
+    min-height: 223px;
+    margin-top: 0;
+    opacity: 0.7;
+    font-family: segoesc;
+    color:white;
+    text-align: center;
+}
+.card2 .main-panel h1{
+  font-family:segoesc;
+  text-align: center;
+}
+
+
+
+.poster1{
+  background-image: url(/poster/poster1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:auto;
+  width: 100%;
+  min-height:453px;
+}
+.poster1 h1{
+  color:#284616;
+  font-family:SHOWG;
+}
+.poster1 .main-panel{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.poster2{
+  background-image: url(/poster/poster2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:auto;
+  width: 100%;
+  min-height:453px;
+}
+.poster2 h1{
+  color:#284616;
+  font-family:FRSCRIPT;
+}
+.poster2 .main-panel{
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.book-cover1{
+  background-image: url(/bookCover/bookCover1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:auto;
+  width: 100%;
+  min-height:800px;
+  padding-top: 40px;
+}
+.book-cover1 h1{
+  font-family:AmaticBold;
+  font-weight: bold;
+font-size: 50px;
+}
+.book-cover1 p{
+  font-family:AmaticSCRegular;
+      font-size: 20px;
+}
+.book-cover1 .main-panel{
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  color:#fff;
+}
+
+.book-cover2{
+  background-image: url(/bookCover/bookCover2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:auto;
+  width: 100%;
+  min-height:800px;
+  padding-top: 50px;
+}
+.book-cover2 h1{
+  font-family:Windsong;
+      font-size: 50px;
+}
+.book-cover2 p{
+  font-family: Windsong;
+      font-size: 30px;
+}
+.book-cover2 .main-panel{
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  color:#fff;
+}
+
+
+
+
+.banner1{
+  background-image: url(/banner/banner1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:auto;
+  width: 100%;
+  min-height:185px;
+}
+.banner1 .main-panel{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.banner1 h1{
+  color:#fff;
+  font-family:FRSCRIPT;
+}
+
+.banner2{
+  background-image: url(/banner/banner2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:auto;
+  width: 100%;
+  min-height:185px;
+}
+.banner2 .main-panel{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.banner2 h1{
+  color:#fff;
+  font-family:segoescb;
+}
+
+
+@media screen and (max-width: 994px){
+  .card1 .body p{
+    font-size: 14px;
+  }
+}

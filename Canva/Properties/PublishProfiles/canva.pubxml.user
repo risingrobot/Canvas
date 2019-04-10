@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Hp\Desktop\PUBLISHED VERSIONS\CANVA</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="banner/banner1.jpg">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="banner/banner2.jpg">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>05/02/2018 18:39:52</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="bin/Braintree.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/Canva.dll">
+      <publishTime>04/02/2019 19:35:59</publishTime>
+    </File>
+    <File Include="bin/Canva.pdb">
+      <publishTime>10/01/2018 18:50:15</publishTime>
+    </File>
+    <File Include="bin/DataModel.dll">
+      <publishTime>04/02/2019 19:35:57</publishTime>
+    </File>
+    <File Include="bin/DataModel.dll.config">
+      <publishTime>09/22/2018 11:00:04</publishTime>
+    </File>
+    <File Include="bin/DataModel.pdb">
+      <publishTime>10/01/2018 10:51:22</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="bookCover/bookCover1.jpg">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="bookCover/bookCover2.jpg">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="cards/card1.jpg">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="cards/card2.jpg">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Content/design_style.css">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Content/font-awesome.css">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Content/font-awesome.min.css">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/AmaticBold.ttf">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/AmaticSCRegular.ttf">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.eot">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.svg">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.ttf">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff2">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome.otf">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/FRSCRIPT.TTF">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/INFROMAN.TTF">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/ITCEDSCR.TTF">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/segoesc.ttf">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/segoescb.ttf">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/SHOWG.TTF">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="fonts/Windsong.ttf">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Images/background_image.png">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Images/bg_tiles.2.jpg">
+      <publishTime>05/02/2018 19:03:07</publishTime>
+    </File>
+    <File Include="Images/canva_logo.png">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Images/desktop-search.png">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Images/signup_bg.png">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Images/smileyface.jpeg">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="poster/poster1.jpg">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="poster/poster2.jpg">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="screenshots/banner1.PNG">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="screenshots/banner2.PNG">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="screenshots/bookCover1.PNG">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="screenshots/bookCover2.PNG">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="screenshots/card1.PNG">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="screenshots/card2.PNG">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="screenshots/poster1.PNG">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="screenshots/poster2.PNG">
+      <publishTime>04/02/2019 17:17:52</publishTime>
+    </File>
+    <File Include="Scripts/ai.0.15.0-build58334.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/ai.0.15.0-build58334.min.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Account/Register.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Admin/Advertisement.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Admin/Categories.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Admin/Design.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Admin/EditCategory.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Admin/EditDesign.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Admin/Index.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Admin/ProfileSetting.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Admin/Subscribe.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Checkouts/New.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Checkouts/Show.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Home/AllDesign.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Home/CreateDesign.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Home/Design.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Home/MyDesign.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>04/02/2019 17:17:51</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/02/2019 19:36:00</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

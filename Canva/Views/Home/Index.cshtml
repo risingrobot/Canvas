@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "index";
+}
+<div class="gradient">
+    <div class="headerMenu">
+        <h1 class="title"> create a design</h1>
+       </div>
+    <div class="features">
+        <ul class="features">
+            @if (ViewBag.Categories as List<DataModel.Category> != null)
+            {
+                foreach (var item in ViewBag.Categories as List<DataModel.Category>)
+                {
+                    <li><a href="/Home/Design?Id=@item.Id">@item.Name</a></li>
+                }
+            }
+
+           
+            </ul>
+    </div>
+  
+</div>

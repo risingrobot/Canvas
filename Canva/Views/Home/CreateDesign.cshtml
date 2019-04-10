@@ -1,0 +1,38 @@
+﻿@model DataModel.Design
+
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create Desing";
+}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <form action="/Home/SaveDesign" method="post">
+                                <input type="hidden"  name="designId" value="@Model.Id"/>
+                                <div class="form-design">
+                                    @if (Model.CategoryId != 2 && Model.CategoryId != 4)
+                                    {
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input name="title" type="text" class="form-control" placeholder="Enter title" />
+                                        </div>
+                                    }
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea name="description" placeholder="Enter the description" rows="10" cols="10" class="form-control"></textarea>
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="btn btn-primary pull-right">Publish</button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <img src="@Model.ImageUrl" style="width:100%"/>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+        

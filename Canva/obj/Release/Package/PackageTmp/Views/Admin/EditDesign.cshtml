@@ -1,0 +1,55 @@
+﻿
+@model Canva.Models.DesignModel
+@{
+    ViewBag.Title = "EditDesign";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>EditCategory</h2>
+    </div>
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Add/Edit Design</div>
+            <div class="panel-body">
+                <form action="/Admin/EditDesign" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="Id" value="@Model.Id" />
+                    <input type="hidden" name="Url" value="@Model.Url" />
+                    <img src="@Url.Content(string.IsNullOrEmpty(Model.Url)?"https://static.parastorage.com/services/wixapps/2.486.0/javascript/wixapps/apps/blog/images/no-image-icon.png":Model.Url)" style="width:120px;height:120px;" />
+                    <input type="file"id="photo" name="photo" />
+                    <div class="form-group">
+                        <label>Html</label>
+                        <textarea class="form-control" name="Html">@Model.Html</textarea>
+                    </div>
+                    <fieldset>
+                        <legend>Select Category</legend>
+                        @foreach (var item in Model.Categories)
+                        {
+                            if (item.Id == Model.Fk_Category.GetValueOrDefault())
+                            {
+                                <label>
+                                    <input checked="checked" type="radio" name="FK_Category" value="@item.Id" /> @item.Name
+                                </label>
+                            }
+                            else
+                            {
+                                <label>
+                                    <input type="radio" name="FK_Category" value="@item.Id" /> @item.Name
+                                </label>
+                            }
+
+                        }
+                    </fieldset>
+                    <button type="submit" class="btn btn-default">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

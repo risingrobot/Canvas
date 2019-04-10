@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "index";
+}
+<div class="gradient">
+    <div class="headerMenu">
+        <h1 class="title"> create a design</h1>
+        <div class="buttonheader">
+            <input type="text" class="research" placeholder="search templetes" />
+            <button class="btncustomer">use custom dimensions</button>
+        </div>
+    </div>
+    <div class="features">
+        <ul class="features">
+            @if (ViewBag.Categories as List<DataModel.Category> != null)
+            {
+                foreach (var item in ViewBag.Categories as List<DataModel.Category>)
+                {
+                    <li><a href="/Home/Design?Id=@item.Id">@item.Name</a></li>
+                }
+            }
+
+            @*<li>Cards</li>
+                <li>Banners</li>
+                <li>Book Covers</li>
+                <li>Posters</li>*@
+            <li class="more"><i class="fa fa-plus fa-1x"></i></li>
+
+        </ul>
+    </div>
+    <p class="parapmore">More..</p>
+</div>

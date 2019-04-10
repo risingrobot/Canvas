@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="canvasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="DesignGalleries" Relationship="Self.FK_DesignGalleries_Categories" FromRole="Categories" ToRole="DesignGalleries" />
+    <NavigationProperty Name="Designs" Relationship="Self.FK_Designs_Categories" FromRole="Categories" ToRole="Designs" />
+  </EntityType>
+  <EntityType Name="DesignGallery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_DesignGalleries_Categories" FromRole="DesignGalleries" ToRole="Categories" />
+  </EntityType>
+  <EntityType Name="Design">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Html" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Designs_Categories" FromRole="Designs" ToRole="Categories" />
+    <NavigationProperty Name="UserDesigns" Relationship="Self.FK_UserDesigns_Designs" FromRole="Designs" ToRole="UserDesigns" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProfessionId" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="FK_Role" Type="Int64" />
+    <NavigationProperty Name="Profession" Relationship="Self.FK_People_Professions" FromRole="People" ToRole="Professions" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_People_Roles" FromRole="People" ToRole="Roles" />
+    <NavigationProperty Name="UserDesigns" Relationship="Self.FK_UserDesigns_People" FromRole="People" ToRole="UserDesigns" />
+  </EntityType>
+  <EntityType Name="Profession">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="People" Relationship="Self.FK_People_Professions" FromRole="Professions" ToRole="People" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EnableFlag" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="People" Relationship="Self.FK_People_Roles" FromRole="Roles" ToRole="People" />
+  </EntityType>
+  <EntityType Name="Subscribe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UserDesign">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Heading" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersonId" Type="Int32" />
+    <Property Name="DesignId" Type="Int32" />
+    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Design" Relationship="Self.FK_UserDesigns_Designs" FromRole="UserDesigns" ToRole="Designs" />
+    <NavigationProperty Name="Person" Relationship="Self.FK_UserDesigns_People" FromRole="UserDesigns" ToRole="People" />
+  </EntityType>
+  <Association Name="FK_DesignGalleries_Categories">
+    <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="DesignGalleries" Type="Self.DesignGallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DesignGalleries">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Designs_Categories">
+    <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Designs" Type="Self.Design" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Designs">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDesigns_Designs">
+    <End Role="Designs" Type="Self.Design" Multiplicity="0..1" />
+    <End Role="UserDesigns" Type="Self.UserDesign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Designs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDesigns">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_People_Professions">
+    <End Role="Professions" Type="Self.Profession" Multiplicity="0..1" />
+    <End Role="People" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="People">
+        <PropertyRef Name="ProfessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_People_Roles">
+    <End Role="Roles" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="People" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="People">
+        <PropertyRef Name="FK_Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDesigns_People">
+    <End Role="People" Type="Self.Person" Multiplicity="0..1" />
+    <End Role="UserDesigns" Type="Self.UserDesign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDesigns">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="DesignGalleries" EntityType="Self.DesignGallery" />
+    <EntitySet Name="Designs" EntityType="Self.Design" />
+    <EntitySet Name="People" EntityType="Self.Person" />
+    <EntitySet Name="Professions" EntityType="Self.Profession" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Subscribes" EntityType="Self.Subscribe" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="UserDesigns" EntityType="Self.UserDesign" />
+    <AssociationSet Name="FK_DesignGalleries_Categories" Association="Self.FK_DesignGalleries_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="DesignGalleries" EntitySet="DesignGalleries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Designs_Categories" Association="Self.FK_Designs_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Designs" EntitySet="Designs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDesigns_Designs" Association="Self.FK_UserDesigns_Designs">
+      <End Role="Designs" EntitySet="Designs" />
+      <End Role="UserDesigns" EntitySet="UserDesigns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_People_Professions" Association="Self.FK_People_Professions">
+      <End Role="Professions" EntitySet="Professions" />
+      <End Role="People" EntitySet="People" />
+    </AssociationSet>
+    <AssociationSet Name="FK_People_Roles" Association="Self.FK_People_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="People" EntitySet="People" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDesigns_People" Association="Self.FK_UserDesigns_People">
+      <End Role="People" EntitySet="People" />
+      <End Role="UserDesigns" EntitySet="UserDesigns" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

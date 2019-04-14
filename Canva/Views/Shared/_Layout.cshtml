@@ -422,7 +422,7 @@
                                 @if (isAdmin)
                                 {
                                     <li class="SideBarMenu @(controller=="Admin" && action== "Index"? "active":""    )"><a href="@Url.Action("Index","Admin")">Dashboard</a></li>
-                                    <li class="SideBarMenu @(controller =="Admin" && action== "Advertisement"? "active":"")"><a href="@Url.Action("Advertisement","Admin")">Advertisement</a></li>
+                                    @*<li class="SideBarMenu @(controller =="Admin" && action== "Advertisement"? "active":"")"><a href="@Url.Action("Advertisement","Admin")">Advertisement</a></li>*@
                                     <li class="SideBarMenu @(controller=="Admin" && action=="Design"?"active":"")"><a href="@Url.Action("Design","Admin")">Designs</a></li>
                                     <li class="SideBarMenu @(controller=="Admin" && action=="Categories" || controller=="Admin" && action == "EditCategory" || controller=="Admin" && action =="DeleteCategory"? "active": "")"><a href="@Url.Action("Categories","Admin")">Categories</a></li>
                                     <li class="SideBarMenu @(controller=="Admin" && action=="Subscribe"?"active":"")"><a href="@Url.Action("Subscribe","Admin")">Subscriptions</a></li>
@@ -433,6 +433,8 @@
                                     <li class="SideBarMenu onitemsticky @(controller=="Home" && action=="AllDesign"?"active":"")"><a href="/Home/AllDesign">All your designs</a></li>
                                     <li class="SideBarMenu @(controller=="Admin" && action=="ProfileSetting"?"active":"")"><a href="@Url.Action("ProfileSetting","Admin",new {Id= UserId })">Profile Setting</a></li>
                                 }
+                                <li class="SideBarMenu @(controller =="Admin" && action== "GetUserDetails"? "active":"")"><a href="@Url.Action("GetUserDetails", "Admin")">User Detail (s) </a></li>
+                          
                                 @*
                                 <li class="SideBarMenu">Create a tream</li>
                                 <li class="SideBarMenu">Your brand</li>

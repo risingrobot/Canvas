@@ -169,6 +169,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CheckoutsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserDetailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -285,9 +286,12 @@
     <Content Include="Views\Admin\Advertisement.cshtml" />
     <Content Include="Views\Admin\Subscribe.cshtml" />
     <Content Include="Views\Admin\ProfileSetting.cshtml" />
+    <Content Include="Views\Admin\UserDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Accounts\" />
+    <Folder Include="Views\UserDetails\" />
+    <Folder Include="Views\UserDetail\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

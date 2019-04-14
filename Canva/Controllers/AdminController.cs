@@ -172,6 +172,21 @@ namespace Canva.Controllers
             }
         }
 
+        [HttpGet]
+
+        public ActionResult GetUserDetails()
+        {
+            try
+            {
+                var model2 = _db.People.Where(x => x.FullName != null);
+                return View("/Views/Admin/UserDetails.cshtml",model2);
+            }
+            catch (Exception ex)
+            { throw ex; }
+
+
+        }
+
         public ActionResult EditDesign(long? Id)
         {
             try

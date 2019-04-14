@@ -10,9 +10,9 @@ namespace Canva.Controllers
 {
     public class AccountController : Controller
     {
-      //  public  DbEntities db = new DbEntities();
+        //  public  DbEntities db = new DbEntities();
         // GET: Accounts
-
+        private DbEntities _db = new DbEntities();
 
 
 
@@ -137,12 +137,18 @@ namespace Canva.Controllers
             }
         }
 
+
+      
+
+
+
         protected override void Dispose(bool disposing)
         {
             using (DbEntities db = new DbEntities())
             {
                 base.Dispose(disposing);
                 db.Dispose();
+                _db.Dispose();
             }
         }
     }
